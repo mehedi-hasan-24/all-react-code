@@ -1,10 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import ClickCounter from "./components/ClickCounter";
+import Counter from "./components/Counter";
+import HoverCounter from "./components/HoverCounter";
 
 function App() {
   return (
     <div >
-      HI
+      <Counter render = {
+          (count, setCounter)=>(<ClickCounter count={count} setCounter={setCounter}/>)
+        }
+      />
+        <Counter render = {
+            (count, setCounter) => (<HoverCounter count = {count} setCounter={setCounter} />)
+        }/>
     </div>
   );
 }

@@ -1,7 +1,8 @@
 import './App.css';
 import ClickCounter from "./components/ClickCounter";
 import Counter from "./components/Counter";
-import HoverCounter from "./components/HoverCounter";
+import Section from "./components/Section";
+import themeContext from "./contexts/themeContext";
 
 function App() {
   return (
@@ -10,9 +11,9 @@ function App() {
           (count, setCounter)=>(<ClickCounter count={count} setCounter={setCounter}/>)
         }
       />
-        <Counter render = {
-            (count, setCounter) => (<HoverCounter count = {count} setCounter={setCounter} />)
-        }/>
+        <themeContext.Provider value={{theme: 'dark'}}>
+            <Section />
+        </themeContext.Provider>
     </div>
   );
 }
